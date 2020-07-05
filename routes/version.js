@@ -9,7 +9,7 @@ class Version {
      * @description this function contain all version one routing
      */
     v1() {
-        console.log();
+        console.log("Version");
     }
 }
 

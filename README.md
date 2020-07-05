@@ -7,6 +7,7 @@ Here are the pre define variable that must availane on `.env` file
 ```
 ENV=local
 PORT=8080
+APPNAME=your appname
 DBHOST=localhost
 DBUSERNAME=root
 DBPASS=

@@ -9,11 +9,11 @@ module.exports = {
     /**
      * Set application name
      */
-    appName: 'BaseCode',
+    appName: (process.env.APPNAME != undefined) ? process.env.APPNAME : "Basecode",
 
     /**
      * Set App version
      */
-    version : "1.0.0",
+    version: "1.0.0",
 
 }
