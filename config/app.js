@@ -16,4 +16,11 @@ module.exports = {
      */
     version: "1.0.0",
 
+    /**
+     * Set flag for api log 
+     * 
+     * if this key set to true the it will save all incoming request detail request log table
+     */
+    requestLog: true
+
 }
