@@ -10,8 +10,10 @@ var app = express();
 var routingVersion = require("./routes/version");
 
 app.get("/", (_req, _res) => {
-    _res.json();
+    _res.sendFile(__dirname + "/view/index.html");
 });
+
+app.use(express.static(__dirname + '/public'));
 
 app.listen(process.env.PORT, () => {
     console.log("Welcome to nodejs easy structure and your server is runing on " + process.env.PORT);
