@@ -1,5 +1,3 @@
-const UserController = require("../app/Http/Controllers/api/v1/UserController");
-
 /**
  * @description This file contiain the application route version
  * 
@@ -13,7 +11,7 @@ class Version {
      * @description this function contain all version one routing
      */
     v1(_router) {
-        require("../app/Http/Controllers/api/v1/UserController");
+        const UserController = require("../app/Http/Controllers/api/v1/UserController");
         _router.get("/signup", UserController.signUp);
         return _router;
     }
