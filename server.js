@@ -3,16 +3,21 @@ require("dotenv").config({
     "path": ".env"
 });
 
+var routingVersion = require("./routes/version");
+
+//Initializing express framework
+var express = require("express");
+var router = express.Router();
+var app = express();
+
 var bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(bodyParser.json());
 
-var express = require("express");
-var app = express();
-var routingVersion = require("./routes/version");
+
+app.use("/v1", routingVersion.v1(router));
 
 /**
  * Load default welcome page
