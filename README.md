@@ -16,7 +16,15 @@ DBNAME=baceCode
 
 `ENV` Variable possible value will be 'local', 'development' and 'production'
 
-##### Here are some minor ORM initialization step
+##### To initialze the project run the below command step by step
+
+```
+npm install
+npx sequelize init
+```
+
+
+
 
 
 
