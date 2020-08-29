@@ -5,6 +5,8 @@ require("dotenv").config({
 
 var routingVersion = require("./routes/version");
 
+var db = require("./config/database");
+
 //Initializing express framework
 var express = require("express");
 var router = express.Router();
@@ -26,6 +28,9 @@ app.get("/", (_req, _res) => {
     _res.sendFile(__dirname + "/view/index.html");
 });
 
+/**
+ * set the assets folder path
+ */
 app.use(express.static(__dirname + '/public'));
 
 app.listen(process.env.PORT, () => {

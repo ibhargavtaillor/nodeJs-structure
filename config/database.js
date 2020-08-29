@@ -1,16 +1,21 @@
-var mysql = require("mysql");
+var Sequelize = require("sequelize");
 
 /**
  * Code to set database credential from env
  */
-var credential = {
+var sequelize = new Sequelize(process.env.DBNAME, process.env.DBUSERNAME, process.env.DBPASS, {
     host: process.env.DBHOST,
-    user: process.env.DBUSERNAME,
-    password: process.env.DBPASS,
-    database: process.env.DBNAME
-}
+    dialect: 'mysql',
+});
 
 /**
- * create connection pool
+ * Test the database connection
  */
-module.exports = mysql.createPool(credential);
+sequelize.authenticate().then(() => {
+    console.log("Database Connected..")
+}).catch((_error) => {
+    console.log("Error : " + _error);
+})
+
+
+module.exports = sequelize;

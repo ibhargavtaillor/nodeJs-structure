@@ -22,10 +22,3 @@ DBNAME=baceCode
 npm install
 npx sequelize init
 ```
-
-
-
-
-
-
-
