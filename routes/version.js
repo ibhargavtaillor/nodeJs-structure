@@ -3,17 +3,16 @@
  * 
  * @author Bhargav Tailor
  */
+const router = require("express").Router();
 class Version {
 
     /**
-     * @param object app incoming express app object
-     * 
      * @description this function contain all version one routing
      */
-    v1(_router) {
+    v1() {
         const UserController = require("../app/Http/Controllers/api/v1/UserController");
-        _router.get("/signup", UserController.signUp);
-        return _router;
+        router.get("/signup", UserController.signUp);
+        return router;
     }
 }
 

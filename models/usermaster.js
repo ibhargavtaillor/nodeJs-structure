@@ -34,13 +34,28 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		vEmail: {
 			type: DataTypes.STRING,
-			unique: true
+			validate: {
+				isUnique: function (val, next) {
+					UserMaster.findOne({
+						where: {
+							vEmail: this.vEmail
+						}
+					}).then((_result) => {
+						if (_result) {
+							return next("Email is already exit")
+						} else {
+							next();
+						}
+					});
+				}
+			}
 		},
 		vPassword: {
 			type: DataTypes.STRING
 		},
 	}, {
 		sequelize,
+		paranoid: true,
 		modelName: 'UserMaster',
 		tableName: 'user_master',
 	});

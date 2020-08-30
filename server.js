@@ -5,10 +5,9 @@ require("dotenv").config({
 
 var routingVersion = require("./routes/version");
 
-
 //Initializing express framework
 var express = require("express");
-var router = express.Router();
+
 var app = express();
 var database = require("./models");
 var bodyParser = require("body-parser");
@@ -17,8 +16,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-
-app.use("/v1", routingVersion.v1(router));
+app.use("/api/v1", routingVersion.v1());
 
 /**
  * Load default welcome page
