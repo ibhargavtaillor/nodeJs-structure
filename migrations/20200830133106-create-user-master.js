@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
-		await queryInterface.createTable('users_master', {
-			iUserid: {
+		await queryInterface.createTable('user_master', {
+			iUserId: {
 				allowNull: false,
 				autoIncrement: true,
 				primaryKey: true,
@@ -10,7 +10,11 @@ module.exports = {
 			},
 			vName: {
 				allowNull: true,
-				type: Sequelize.STRING
+				type: Sequelize.STRING(128)
+			},
+			vProfileImage: {
+				allowNull: true,
+				type: Sequelize.STRING(128)
 			},
 			txAddress: {
 				allowNull: true,
@@ -31,10 +35,14 @@ module.exports = {
 			updatedAt: {
 				allowNull: false,
 				type: Sequelize.DATE
+			},
+			deletedAt: {
+				allowNull: false,
+				type: Sequelize.DATE
 			}
 		});
 	},
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.dropTable('user_masters');
+		await queryInterface.dropTable('user_master');
 	}
 };

@@ -5,13 +5,12 @@ require("dotenv").config({
 
 var routingVersion = require("./routes/version");
 
-var db = require("./config/database");
 
 //Initializing express framework
 var express = require("express");
 var router = express.Router();
 var app = express();
-
+var database = require("./models");
 var bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({
@@ -33,6 +32,10 @@ app.get("/", (_req, _res) => {
  */
 app.use(express.static(__dirname + '/public'));
 
-app.listen(process.env.PORT, () => {
-    console.log("Welcome to nodejs easy structure. Your server is runing on " + process.env.PORT);
+database.sequelize.sync().then(() => {
+    app.listen(process.env.PORT, () => {
+        console.log("Welcome to nodejs easy structure. Your server is runing on " + process.env.PORT);
+    })
+}).catch((_err) => {
+    console.log("Please check database connection");
 })

@@ -6,6 +6,7 @@ var Sequelize = require("sequelize");
 var sequelize = new Sequelize(process.env.DBNAME, process.env.DBUSERNAME, process.env.DBPASS, {
     host: process.env.DBHOST,
     dialect: 'mysql',
+    logging: false
 });
 
 /**
