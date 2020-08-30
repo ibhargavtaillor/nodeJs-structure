@@ -31,3 +31,18 @@ DBPASS=
 DBNAME=baceCode
 ```
 `ENV` Variable possible value will be 'local', 'development' and 'production'
+
+### How to create Model with Migrations ?
+
+You need to know about some CLI command which help you to create migrations. Migrations are besically used to manage the versioning for the database.
+
+Run the below command to create a new model and migrations
+
+`npx sequelize model:generate --name <name of model> --attributes <list of attributes>`
+
+**Example:**
+```
+npx sequelize model:generate --name UserMaster --attributes iUserId:integer, vName:string
+```
+
+The above example will create migration and model in respective folder,
