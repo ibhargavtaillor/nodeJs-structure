@@ -5,7 +5,7 @@
  */
 
 const constant = require("../../../../../config/constants");
-const usermaster = require("../../../../../models/usermaster");
+const models = require("../../../../../models/index");
 class UserController {
 
     /**
@@ -15,7 +15,13 @@ class UserController {
      * @description ThiS function is used to register new user
      */
     signUp(req, res) {
-        console.log(usermaster.findAll());
+        var users = models.sequelize.models.UserMaster.findAll({
+            attributes: ['vName']
+        }).then((_result) => {
+            _result.forEach((user, index) => {
+                console.log(user.isNewRecord);
+            })
+        });
     }
 }
 
