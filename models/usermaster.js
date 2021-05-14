@@ -12,6 +12,15 @@ module.exports = (sequelize, DataTypes) => {
 		static associate(models) {
 			// define association here
 		}
+
+		/**
+		 * 
+		 * @param {*} _callback 
+		 */
+		test(_callback) {
+			_callback("Test function");
+		}
+
 	};
 
 	UserMaster.init({

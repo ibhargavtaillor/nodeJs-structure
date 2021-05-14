@@ -5,7 +5,7 @@
  */
 
 const constant = require("../../../../../config/constants");
-
+const usermaster = require("../../../../../models/usermaster");
 class UserController {
 
     /**
@@ -15,10 +15,7 @@ class UserController {
      * @description ThiS function is used to register new user
      */
     signUp(req, res) {
-        res.json({
-            code: constant.resCode.OK,
-            message: "This is a test message"
-        })
+        console.log(usermaster.findAll());
     }
 }
 
