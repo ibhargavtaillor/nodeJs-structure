@@ -1,4 +1,4 @@
-# nodeJs-structure
+# NodeJs-Structure
 
 ##### Node js Structure
 You need to create .env file to setup some basic enviroment configuration
@@ -15,5 +15,7 @@ DBNAME=baceCode
 ```
 
 `ENV` Variable possible value will be 'local', 'development' and 'production'
+
+updating Readme file
 
 
