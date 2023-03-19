@@ -14,8 +14,8 @@ DBPASS=
 DBNAME=baceCode
 ```
 
-`ENV` Variable possible value will be 'local', 'development' and 'production'
+`ENV` Variable possible value will be 'local', 'development' and 'production'.
 
-updating Readme file
+Updating Readme file
 
 
