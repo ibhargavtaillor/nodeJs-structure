@@ -16,4 +16,6 @@ DBNAME=baceCode
 
 `ENV` Variable possible value will be 'local', 'development' and 'production'
 
+updating Readme file
+
 
